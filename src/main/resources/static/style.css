@@ -1,0 +1,55 @@
+.news-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.news-image {
+    max-width: 150px;
+    margin-right: 20px; /* Space between the image and the content */
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image is proportionally resized */
+}
+
+.news-details {
+    max-width: calc(100% - 170px); /* Adjust to leave space for the image */
+}
+
+.news-details h2,
+.news-details h3 {
+    margin: 5px 0;
+}
+
+.news-details p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Distribute items with space between them */
+    align-items: center; /* Vertically align items */
+    margin-bottom: 20px; /* Add some spacing below the header */
+}
+
+.header-container h1 {
+    margin: 0; /* Remove default margin for better alignment */
+}
+
+.save-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #b1c6df;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #8caed3;
+}

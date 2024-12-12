@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Articles</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="header-container">
+<h1>Crypto News of the Day</h1>
+<button type="submit" class="save-button" form="saveForm">Save</button>
+</div>
+
+<!-- Message container -->
+<div th:if="${message!=null}">
+    <p th:text="${message}"></p>
+</div>
+
+<form id="saveForm" action="/articles" method="post">
+<div th:each="news:${article}" class="news-item">
+                    <img th:src="${news.imageurl}" alt="News Image" class="news-image">
+            <div class="news-details">
+                <p>id:<code th:text="${news.id}"></code></p>
+
+                <h2>Title:<code th:text="${news.title}"></code></h2>
+
+                <p>Body:<code th:text="${news.body}"></code></p>
+                <p>Category:<code th:text="${news.categories}"></code></p>
+                <p>Tags:<code th:text="${news.tags}"></code></p>
+                <p>Published:<code th:text="${news.publishedOn}"></code></p>
+                <p><a th:href="${news.url}" target="_blank">Read More</a></p>
+                <label>
+                    <input type="checkbox" name="selectedArticles" th:value="${news.id}" class="article-checkbox">
+                    Save
+                </label>
+            </div>
+</div>
+
+</form>
+
+
+</body>
+</html>
